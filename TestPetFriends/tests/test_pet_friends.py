@@ -136,19 +136,8 @@ def test_add_new_pet_with_invalid_key(age=2, animal_type='dog', name='Kolya'):
     status, result = pf.add_new_pet(auth_key, age, animal_type, name, pet_photo)
     assert status == 403
 
-# #3
-# @pytest.mark.xfail
-# def test_add_new_pet_with_non_complete_data(age=2, animal_type='dog', name='Kolya'):
-#     """Добавляем питомца с фото, с неверным auth_key. Код ответа 403."""
-#     _, auth_key = pf.get_api_key(valid_email, valid_password)
-#     pet_photo = os.path.join(os.path.dirname(__file__), 'images/img2.jpg')
-#
-#     status, result = pf.add_new_pet(auth_key, age, animal_type, name, pet_photo)
-#     assert status == 400
-
 
 # #7
-
 @pytest.mark.xfail
 def tests_simple_create_new_pet_with_invalid_data():
     """Создаем питомца. Передаем не полные данные-без возраста и породы.
@@ -179,7 +168,6 @@ def tests_simple_create_new_pet_with_invalid_data():
 #     # Ожидаем, что ответ не равен 200
 #     assert status != 200
 
-# #5
 
 # #8
 @pytest.mark.xfail
