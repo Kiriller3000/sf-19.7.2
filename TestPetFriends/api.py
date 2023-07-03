@@ -55,17 +55,7 @@ class PetFriends:
 
     def update_pet_info(self, auth_key: json, pet_id: str, **data_option) -> json:
         """Обновление данных о животном.
-           Функция принимает произвольное число параметров данных о питомце для позитивного и негативного теста."""
-
-        # Преобразуем параметры функции и их значения в строку
-        str_arg = ''
-        for kw in data_option:
-            str_arg += f"""'{kw}': '{data_option[kw]}',\n"""
-        str_arg = '{' + str_arg + '}'
-
-        #Преобразуем строку в словарь
-        data = eval(str_arg)
-
+        data = data_option
         headers = {'auth_key': auth_key['key']}
 
         res = requests.put(self.base_url + f'api/pets/{pet_id}', headers=headers, data=data)
@@ -92,16 +82,7 @@ class PetFriends:
 
     def simple_create_new_pet(self, auth_key: json, **data_option) -> json:
         """Добавление животного без фото.
-           Функция принимает произвольное число параметров данных о питомце для позитивного и негативного теста."""
-        # Преобразуем параметры функции и их значения в строку
-        str_arg = ''
-        for kw in data_option:
-            str_arg += f"""'{kw}': '{data_option[kw]}',\n"""
-        str_arg = '{' + str_arg + '}'
-
-        #Преобразуем строку в словарь
-        data = eval(str_arg)
-
+        data = data_option
         headers = {'auth_key': auth_key['key']}
 
         res = requests.post(self.base_url + 'api/create_pet_simple', headers=headers, data=data)
