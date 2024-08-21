@@ -1,1 +1,1 @@
-Тестирование API сайта "Дом питомца"
+Тестирование API сайта "https://petfriends.skillfactory.ru/".
