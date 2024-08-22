@@ -1,1 +1,1 @@
-Тестирование API сайта "petfriends.skillfactory.ru/".
+Тестирование API сайта petfriends.skillfactory.ru
